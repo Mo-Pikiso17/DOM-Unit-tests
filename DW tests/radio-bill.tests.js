@@ -1,20 +1,22 @@
-describe("The text bill factory function", function(){
+// describe("The radio bill factory function", function(){
     
-    it("should be able to add call cost", function(){
-        let billTypes = radioBills();
+//     it("should be able to add call cost", function(){
+//         let bill = radioBills();
 
-        billTypes.radioBillTotals("call");
-        assert.equal(2.75, billTypes.getCallsTotal());
+//         bill.radioBillTotals("call");
+//         assert.equal(2.75, bill.getCallsCost());
 
-    })
+//     })
 
-    it("should be able to add sms cost", function(){
-        let billTypes = radioBills();
+//     it("should be able to add sms cost", function(){
+//         let bill = radioBills();
 
-        billTypes.radioBillTotals("sms");
-        assert.equal(0.75, billTypes.getSmesTotal());
+//         bill.radioBillTotals("sms");
+//         assert.equal(0.75, bill.getSmesCost());
 
-    })
+//     })
 
-});
+// });
+
+
 
