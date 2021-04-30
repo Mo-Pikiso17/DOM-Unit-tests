@@ -1,53 +1,107 @@
 
     function textBills(){
-    var theCallTotal = 0;
-    var theSmsTotal = 0;
-    var theTotal = 0;
+    var textCallTotal = 0;
+    var textSmsTotal = 0;
+    var textTotal = 0;
+    var textDangerLevel = 0;
+    var textWarningLevels = 0;
+    var textCallCost = 0;
+    var textSmsCost = 0;
     
 
-    // //set
-    // function setCallTotal(callTotal){
-    //     theCallTotal = callTotal;
-    // }
 
 
     // get and return
-    function getCallTotal(){
-        return theCallTotal;
+    function getTextCallTotal(){
+        return textCallTotal;
 
     }
 
-    function getSmsTotal(){
-        return theSmsTotal;
+    function getTextSmsTotal(){
+        return textSmsTotal;
     }
 
-    function getTotal(){
-        theTotal = theCallTotal + theSmsTotal;
-        return theTotal;
+    function getTextTotalCost(){
+        return textCallTotal + textSmsTotal;
     }
+
+
+
+    //set
+function setTextWarningLevel(tWarningLevel){
+    textWarningLevels = tWarningLevel;
+}
+
+function getTextWarningLevels(){
+    return textWarningLevels;
+}
+
+//set
+function setTextDangerLevel(tDangerLevel){
+    textDangerLevel = tDangerLevel;
+}
+
+
+
+
+
+function getTextDangerLevel(){
+    return textDangerLevel;
+}
+
+function textCall(){
+
+    textCallTotal += textCallCost;
+}
+
+function textSms(){
+
+    textSmsTotal += textSmsCost;
+}
+
+
+
+
 
     
 
 function textBillTotal(billTypeEntered){    
     if (billTypeEntered === "call"){
-        theCallTotal += 2.75;
-            theTotal += 2.75;
+        textCallCost += 2.75;
+            textTotal += 2.75;
         }
         
     else if (billTypeEntered === "sms"){
-        theSmsTotal += 0.75;
-            theTotal += 0.75;
+        textSmsCost += 0.75;
+            textTotal += 0.75;
         }
     
 }
 
+function textClassname(){
+    if (getTextTotalCost() >= 30 && getTextTotalCost() < 50){
+        return "warning";
+    }
+
+    if (getTextTotalCost() >= 50){
+        return "danger";
+    }
+}
+
+
 return{
-    // setCallTotal,
-    getCallTotal,
-    getSmsTotal,
+    getTextCallTotal,
+    getTextSmsTotal,
     textBillTotal,
     textBills,
-    getTotal
+    getTextTotalCost,
+    textClassname,
+    getTextWarningLevels,
+    getTextDangerLevel,
+    setTextWarningLevel,
+    setTextDangerLevel,
+    textCall,
+    textSms
 }
 
 }
